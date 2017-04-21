@@ -33,7 +33,7 @@ class BancoMoedasUsuario(models.Model):
 	saldoMoedas = models.BigIntegerField()
 
 	def __str__(self):
-		return self.saldoMoedas
+		return 'Número de moedas:'.format(self.saldoMoedas)
 
 class Pedido(models.Model):
 	idPedido = models.AutoField(primary_key=True)
