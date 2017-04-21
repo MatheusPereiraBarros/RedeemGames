@@ -1,0 +1,37 @@
+Aplicação que cadastra usuários para geração de moeda virtual.
+
+A moeda virtual é gerada através do cumprimento de desafios em minigames online.
+
+A moeda virtual deverá ser usada dentro do próprio site para desbloquear chaves de acesso ou links de download de jogos;
+
+O sistema deverá cadastrar:
+
+Usuário:
+
+- Id de usuário;
+- Nome de usuário;
+- E-mail;
+- Senha;
+
+Banco do usuário:
+
+- Id de usuário (FK);
+- Saldo de moedas;
+
+Jogo:
+
+- Id do jogo;
+- Nome do jogo;
+- Distribuidora;
+- Preço correspondente na moeda virtual;
+- Plataforma de ativação;
+- Chave de acesso ou link de download;
+
+Pedido:
+
+- Id de usuário (FK);
+- Id do jogo (FK);
+- Chave de acesso (FK);
+- Data do pedido;
+
+Por questões legais, só podem ser disponibilizados jogos gratuitos ou adquiridos legalmente e que ainda não tenham sido ativados em nenhuma plataforma;
