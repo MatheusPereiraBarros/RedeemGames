@@ -1,4 +1,4 @@
-Aplicação que cadastra usuários para geração de moeda virtual.
+﻿Aplicação que cadastra usuários para geração de moeda virtual.
 
 A moeda virtual é gerada através do cumprimento de desafios em minigames online.
 
@@ -22,6 +22,7 @@ Jogo:
 
 - Id do jogo;
 - Nome do jogo;
+- Imagem do jogo;
 - Distribuidora;
 - Preço correspondente na moeda virtual;
 - Plataforma de ativação;
@@ -34,4 +35,34 @@ Pedido:
 - Chave de acesso (FK);
 - Data do pedido;
 
+O adminstrador do sistema pode adicionar, alterar ou remover registros de todas as tabelas;
+
+O usuário só poderá adicionar, alterar ou remover um único registro da tabela Usuário correspondente.
+
+Na tela inicial do site, deverá haver uma tela de login que pedirá o nome de usuário e senha.
+
+Deverá haver um botão Cadastrar para cadastro de novos usuários. Ao clicar nesse botão, o usuário será redirecionado para uma tela solicitando as seguintes informações: Nome, E-mail e senha.
+
+Após o cadastro, o usuário será redirecionado para uma tela apresentando o seu nome de usuário e saldo de moedas. Haverá uma breve introdução, e o minijogo/desafio embutido no corpo do site, responsável pela geração de moedas;
+
+O número de pontos adquiridos no minijogo/desafio, deverá ser adicionado no atributo Banco.SaldoMoedas;
+
+Na mesma tela, deverá ter um mosaico com os jogos cadastrados no sistema. Ao clicar no ícone do jogo, o usuário será redirecionado para uma tela com uma imagem, descrição do jogo e o botão "Fazer pedido".
+
+No ato de realização do pedido do jogo, deverão ser comparados os atributos Banco.SaldoMoedas e Jogo.PrecoJogo. Se o valor de Banco.SaldoMoedas for menor que Jogo.PrecoJogo, o sistema deverá emitir um alerta avisando ao usuário que ele não possui moedas suficientes.
+
+Caso contrário, deverá ser decrementado do atributo Banco.SaldoMoedas o valor correspondente ao atributo Jogo.PrecoJogo e criado um novo registro na tabela Pedido, com o ID do usuário, o ID do jogo, a data do pedido e a chave de acesso/link para download do jogo.
+
 Por questões legais, só podem ser disponibilizados jogos gratuitos ou adquiridos legalmente e que ainda não tenham sido ativados em nenhuma plataforma;
+
+Telas:
+
+- Login;
+- Cadastro;
+
+- Minijogo;
+- Mosaico de jogos;
+- Tela de pedido;
+
+- Visualizar pedidos;
+- Alterar cadastro;
