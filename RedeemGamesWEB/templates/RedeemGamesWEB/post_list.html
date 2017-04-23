@@ -1,4 +1,25 @@
 <html>
-    <p>Hi there!</p>
-    <p>It works!</p>
+    <head>
+        <title>RedeemGames</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body class="container">
+        <div>
+            <h1><a href="">Reedem Games</a></h1>
+        </div>
+
+        <div>
+            <p>Jogo 01</p>
+            <h2><a href="">The Witcher 3</a></h2>
+            <p>Você precisa de 15000 moedas para comprar esse jogo. Consiga moedas cumprindo desafios no minigame do nosso site!</p>
+       
+
+        <h2><a href="">Usuários do site</a></h2>
+        {% for user in usuario %}
+   			<p>{{ user }}</p>
+		{% endfor %}
+
+		 </div>
+    </body>
 </html>

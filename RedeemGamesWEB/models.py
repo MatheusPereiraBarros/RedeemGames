@@ -10,6 +10,9 @@ class Usuario(models.Model):
     def publish(self):
         self.save()
 
+    def usuario_id(self):
+    	return self.id
+
     def __str__(self):
         return self.nomeUsuario
 
@@ -25,6 +28,9 @@ class Jogo(models.Model):
 	def publish(self):
 		self.save()
 
+	def jogo_id(self):
+		return self.id
+
 	def __str__(self):
 		return self.nomeJogo
 
@@ -35,6 +41,10 @@ class BancoMoedasUsuario(models.Model):
 	def __str__(self):
 		return 'Número de moedas:'.format(self.saldoMoedas)
 
+	def bancomoedas_id(self):
+		return self.id
+
+
 class Pedido(models.Model):
 	idPedido = models.AutoField(primary_key=True)
 	idUsuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
@@ -44,6 +54,9 @@ class Pedido(models.Model):
 	def publish(self):
 		self.published_date = timezone.now()
 		self.save()
+
+	def pedido_id(self):
+		return self.id
 
 		def __str__(self):
 			return self.title
