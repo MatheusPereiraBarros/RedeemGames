@@ -1,8 +1,6 @@
-﻿Aplicação que cadastra usuários para geração de moeda virtual.
+﻿Aplicação para distribuição (giveaways) de games gratuitos.
 
-A moeda virtual é gerada através do cumprimento de desafios em minigames online.
-
-A moeda virtual deverá ser usada dentro do próprio site para desbloquear chaves de acesso ou links de download de jogos;
+Para conseguir os jogos, o usuário deverá cumprir alguns desafios, como acertar alguma pergunta em um determinado período de tempo. A cada pergunta acertada, o usuário acumula pontos que podem ser trocados em outros games no site.
 
 O sistema deverá cadastrar:
 
@@ -13,10 +11,6 @@ Usuário:
 - E-mail;
 - Senha;
 
-Banco do usuário:
-
-- Id de usuário (FK);
-- Saldo de moedas;
 
 Jogo:
 
@@ -28,12 +22,20 @@ Jogo:
 - Plataforma de ativação;
 - Chave de acesso ou link de download;
 
+(Alterar tabela do jogo para permitir controle de estoque)
+
 Pedido:
 
 - Id de usuário (FK);
 - Id do jogo (FK);
 - Chave de acesso (FK);
 - Data do pedido;
+
+Pergunta:
+- Id da pergunta;
+- Pergunta;
+- Resposta;
+- Pontuação da resposta;
 
 O adminstrador do sistema pode adicionar, alterar ou remover registros de todas as tabelas;
 
