@@ -4,13 +4,6 @@ Para conseguir os jogos, o usuário deverá cumprir alguns desafios, como acerta
 
 O sistema deverá cadastrar:
 
-Usuário:
-
-- Id de usuário;
-- Nome de usuário;
-- E-mail;
-- Senha;
-
 
 Jogo:
 
@@ -23,6 +16,11 @@ Jogo:
 - Chave de acesso ou link de download;
 
 (Alterar tabela do jogo para permitir controle de estoque)
+
+Estoque:
+
+- Id do jogo;
+- Quantidade de chaves;
 
 Pedido:
 

@@ -1,29 +1,17 @@
 from django.db import models
 from django.utils import timezone
 
-class Usuario(models.Model):
-    idUsuario = models.AutoField(primary_key=True)
-    nomeUsuario = models.CharField(max_length=20)
-    email = models.EmailField(max_length=254)
-    password = models.CharField(max_length=50)
-    
-    def publish(self):
-        self.save()
-
-    def usuario_id(self):
-    	return self.id
-
-    def __str__(self):
-        return self.nomeUsuario
+'''Gerencia os jogos a serem distribuidos no site'''
 
 class Jogo(models.Model):
 	idJogo = models.AutoField(primary_key=True)
 	nomeJogo = models.CharField(max_length=20)
+	descricaoJogo = models.CharField(max_length=500, default='DESCRIÇÃO')
 	imagemJogo = models.URLField(max_length=200)
 	distribuidora = models.CharField(max_length=50)
 	precoJogo = models.BigIntegerField()
 	plataformaJogo = models.CharField(max_length=50)
-	chaveAcesso = models.CharField(max_length=100)
+
 
 	def publish(self):
 		self.save()
@@ -34,31 +22,45 @@ class Jogo(models.Model):
 	def __str__(self):
 		return self.nomeJogo
 
-class BancoMoedasUsuario(models.Model):
-	idUsuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-	saldoMoedas = models.BigIntegerField()
-
-	def __str__(self):
-		return 'Número de moedas:'.format(self.saldoMoedas)
-
-	def bancomoedas_id(self):
-		return self.id
-
-
-class Pedido(models.Model):
-	idPedido = models.AutoField(primary_key=True)
-	idUsuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+class JogoChave(models.Model):
 	idJogo = models.ForeignKey(Jogo, on_delete=models.CASCADE)
-	dataPedido = models.DateTimeField()
+	chaveAcesso = models.CharField(max_length=100)
+	linkDownload = models.URLField(max_length=200, default='www.example.com.br')
+
+	def quantJogos(self):
+		return self.objects.count()
 
 	def publish(self):
-		self.published_date = timezone.now()
 		self.save()
 
-	def pedido_id(self):
-		return self.id
+	def __str__(self):
+		return 'Jogo: {0}, Chave: {1}'.format(self.idJogo, self.chaveAcesso)
 
-		def __str__(self):
-			return self.title
+
+class Pergunta(models.Model):
+	idPergunta = models.AutoField(primary_key=True)
+	Pergunta = models.CharField(max_length=200)
+	Resposta = models.CharField(max_length=200)
 		
+	def publish(self):
+		self.save()
+
+	def __str__(self):
+		return 'Pergunta: {0}'.format(self.Pergunta)
+
+class PostGameSite(models.Model):
+    author = models.CharField(max_length=50)
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(
+            default=timezone.now)
+    published_date = models.DateTimeField(
+            blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title
 # Create your models here.

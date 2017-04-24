@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Usuario
+from .models import Jogo
 
 def post_list(request):
-	usuario = Usuario.objects.all()
-	return render(request, 'RedeemGamesWEB/post_list.html', {'usuario': usuario})
+	jogo = Jogo.objects.all()
+	return render(request, 'RedeemGamesWEB/post_list.html', {'usuario': jogo})
 
 # Create your views here.
