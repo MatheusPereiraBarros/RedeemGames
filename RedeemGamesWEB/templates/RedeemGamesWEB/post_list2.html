@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>RedeemGames</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body class="container">
+        <div>
+            <h1><a href="">Reedem Games</a></h1>
+        </div>
+
+        <div>
+            <p>Jogo 01</p>
+            <h2><a href="">The Witcher 3</a></h2>
+            <p>Você precisa de 15000 moedas para comprar esse jogo. Consiga moedas cumprindo desafios no minigame do nosso site!</p>
+       
+
+
+        {% for jogo in game %}
+            <div>
+                <p>{{jogo.nomeJogo}}</p>
+            </div>
+        {% endfor %}
+
+        
+        {% for post in postagem %}
+            <div>
+                 <h1><a href="">{{ post.title }}</a></h1>
+                 <p>{{ post.text|linebreaksbr }}</p>             
+                 <p>published: {{ post.published_date }}</p>
+            </div>
+        {% endfor %}
+
+		 </div>
+    </body>
+</html>
