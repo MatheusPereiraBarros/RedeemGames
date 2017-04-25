@@ -25,7 +25,7 @@ SECRET_KEY = '%r3)+%zn=jh2sql&%$7#_5ors021-_=kh)&o0&2+7358&5qgm('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'matheuspereirabarros.pythonanywhere.com']
 
 
 # Application definition
