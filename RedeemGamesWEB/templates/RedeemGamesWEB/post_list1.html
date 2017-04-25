@@ -15,21 +15,10 @@
             <p>Você precisa de 15000 moedas para comprar esse jogo. Consiga moedas cumprindo desafios no minigame do nosso site!</p>
        
 
-
-        {% for jogo in game %}
-            <div>
-                <p>{{jogo.nomeJogo}}</p>
-            </div>
-        {% endfor %}
-
-        
-        {% for post in postagem %}
-            <div>
-                 <h1><a href="">{{ post.title }}</a></h1>
-                 <p>{{ post.text|linebreaksbr }}</p>             
-                 <p>published: {{ post.published_date }}</p>
-            </div>
-        {% endfor %}
+        <h2><a href="">Usuários do site</a></h2>
+        {% for user in usuario %}
+   			<p>{{ user }}</p>
+		{% endfor %}
 
 		 </div>
     </body>
