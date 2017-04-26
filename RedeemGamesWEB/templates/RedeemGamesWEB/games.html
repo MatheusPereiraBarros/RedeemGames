@@ -33,7 +33,6 @@
 	<link rel="apple-touch-icon-precomposed" href="{% static 'images/ico/apple-touch-icon-57-precomposed.png' %}">
 </head><!--/head-->
 <body>
-{% load static %}
 	<div class="preloader">
 		<div class="preloder-wrap">
 			<div class="preloder-inner"> 
@@ -120,30 +119,27 @@
 						<p>Escolha seu primeiro jogo, responda a pergunta e ganhe gemas para conseguir outros jogos!</p>
 					</div>
 				</div>
-			<!--	<ul class="portfolio-filter text-center">
+				<ul class="portfolio-filter text-center">
 					<li><a class="btn btn-default active" href="#" data-filter="*">All</a></li>
-					<li><a class="btn btn-default" href="#" data-filter=".html">Html</a></li></ul>-->
-				<!--/#portfolio-filter-->
-              
-               {% for jogos in jogo %}
+					<li><a class="btn btn-default" href="#" data-filter=".html">Html</a></li>
+				</ul><!--/#portfolio-filter-->
+				<div class="portfolio-items">
+					<div class="col-sm-3 col-xs-12 portfolio-item html">
+						<div class="view efffect">
+							<div class="portfolio-image">
+								{% load static %}
+								<img src="{% static 'images/portfolio/1.jpg' %}" alt=""></div> 
+								<div class="mask text-center">
+									<h3>Novel</h3>
+									<h4>Lorem ipsum dolor sit amet consectetur</h4>
+									<a href="#"><i class="fa fa-link"></i></a>
+									{% load static %}
+									<a href="{% static 'images/portfolio/big-item.jpg' %}" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+								</div>
+							</div>
+						</div>
 				
-                     
-                      <div class="col-sm-3 col-xs-12 portfolio-item html">
-                        <div class="view efffect">
-                            <div class="portfolio-image">
-                                {% load static %}
-                                <img src="{{jogos.imagemJogo}}" alt="">
-                            </div> <div class="mask text-center">
-                            <h3>{{ jogos.nomeJogo }}</h3>
-                            <h4>{{ jogos.descricaoJogo }}</h4>
-                            <a href="#"><i class="fa fa-link"></i></a>
-                            {% load static %}
-                            <a href="{{jogos.imagemJogo}}" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-				 {% endfor %}
-					<!---<div class="col-sm-3 col-xs-12 portfolio-item html">
+					<div class="col-sm-3 col-xs-12 portfolio-item html">
 						<div class="view efffect">
 							<div class="portfolio-image">
 								{% load static %}
@@ -188,7 +184,7 @@
 								<a href="{% static 'images/portfolio/big-item.jpg' %}" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 							</div>
 						</div>
-					</div>-->
+					</div>
 				
 
 					</section> <!--/#portfolio-->
