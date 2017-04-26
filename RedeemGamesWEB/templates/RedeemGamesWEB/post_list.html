@@ -74,7 +74,7 @@
 			<ol class="carousel-indicators">
 				<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
 				<li data-target="#main-carousel" data-slide-to="1"></li>
-				<li data-target="#main-carousel" data-slide-to="2"></li>
+			<!--	<li data-target="#main-carousel" data-slide-to="2"></li>-->
 			</ol><!--/.carousel-indicators--> 
 			<div class="carousel-inner">
 				{% load static %}
@@ -82,19 +82,19 @@
 					<div class="carousel-caption"> 
 						<div> 
 							<h2 class="heading animated fadeIn">Redeem Games tem jogos para você!</h2> 
-							<p class="animated fadeIn">Escolha um jogo FREE, responda a pergunta corretamente e ganhe uma chave de acesso ou link para download do jogo</p> 
+							<p class="animated fadeIn">Escolha um jogo FREE, ganhe uma chave de acesso ou link para download do jogo</p> 
 							<a class="scroll btn btn-default slider-btn animated fadeIn" href="#portfolio">ENTÃO VAMOS LÁ!</a> 
 						</div> 
 					</div> 
 				</div>
-				{% load static %}
+				<!--{% load static %}
 				<div class="item" style="background-image: url({% static 'images/slider/slide2.jpg' %})"> 
 					<div class="carousel-caption"> <div> 
 						<h2 class="heading animated bounceInDown">Responda perguntas rapidamente para conseguir recuperar seus jogos</h2> 
 						<p class="animated bounceInUp">Senão... </p>  
 					</div> 
 				</div> 
-			</div> 
+			</div> -->
 			{% load static %}
 			<div class="item" style="background-image: url({% static 'images/slider/slide1.jpg' %})"> 
 				<div class="carousel-caption"> 
@@ -117,7 +117,7 @@
 				<div class="row text-center">
 					<div class="col-sm-8 col-sm-offset-2">
 						<h2 class="title-one">Catálogo de jogos</h2>
-						<p>Escolha seu primeiro jogo, responda a pergunta e ganhe gemas para conseguir outros jogos!</p>
+						<p>Escolha um jogo GRATUITO para baixar! Passe o mouse em cima da imagem e clique no ícone da corrente!</p>
 					</div>
 				</div>
 			<!--	<ul class="portfolio-filter text-center">
@@ -125,20 +125,19 @@
 					<li><a class="btn btn-default" href="#" data-filter=".html">Html</a></li></ul>-->
 				<!--/#portfolio-filter-->
               
-               {% for jogos in jogo %}
-				
+               {% for jogo in jogo %}
                      
                       <div class="col-sm-3 col-xs-12 portfolio-item html">
                         <div class="view efffect">
                             <div class="portfolio-image">
                                 {% load static %}
-                                <img src="{{jogos.imagemJogo}}" alt="">
+                                <img src="{{jogo.imagemJogo}}" alt="">
                             </div> <div class="mask text-center">
-                            <h3>{{ jogos.nomeJogo }}</h3>
-                            <h4>{{ jogos.descricaoJogo }}</h4>
-                            <a href="#"><i class="fa fa-link"></i></a>
+                            <h3>{{ jogo.nomeJogo }}</h3>
+                            <h5>{{ jogo.descricaoJogo }}</h5>
+                            <a href="{{jogo.linkDownload}}"><i class="fa fa-link"></i></a>
                             {% load static %}
-                            <a href="{{jogos.imagemJogo}}" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+                            <a href="{{jogo.imagemJogo}}" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
                         </div>
                     </div>
                 </div>

@@ -5,13 +5,13 @@ from django.utils import timezone
 
 class Jogo(models.Model):
 	idJogo = models.AutoField(primary_key=True)
-	nomeJogo = models.CharField(max_length=20)
-	descricaoJogo = models.CharField(max_length=500, default='DESCRIÇÃO')
+	nomeJogo = models.CharField(max_length=50)
+	descricaoJogo = models.CharField(max_length=140, default='')
 	imagemJogo = models.URLField(max_length=200)
 	distribuidora = models.CharField(max_length=50)
 	precoJogo = models.BigIntegerField()
 	plataformaJogo = models.CharField(max_length=50)
-
+	linkDownload = models.URLField(max_length=200, default='')
 
 	def publish(self):
 		self.save()
